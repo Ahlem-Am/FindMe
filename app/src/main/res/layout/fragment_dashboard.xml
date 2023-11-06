@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AFA9A9"
+    android:orientation="vertical"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="30dp"
+        android:text="Position Demand"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="30dp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/ed_phone"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="#D72B2929"
+        android:textColorHint="#686464"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/btn_sms"
+        android:layout_width="349dp"
+        android:layout_height="67dp"
+        android:layout_margin="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
+        android:text="Send SMS"
+        android:textColorHighlight="#2196F3" />
+</LinearLayout>
