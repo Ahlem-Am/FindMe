@@ -2,6 +2,7 @@ package com.example.findme;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -16,8 +17,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
- public double longitude;
- public double latitude;
+    private double longitude, latitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +30,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        longitude=Double.parseDouble(getIntent().getStringExtra("lo"));
-        latitude=Double.parseDouble(getIntent().getStringExtra("la"));
+
+
+        // Retrieve the longitude and latitude values from the intent's extras
+        Intent intent = getIntent();
+        String longitudeStr = intent.getStringExtra("longitude");
+        String latitudeStr = intent.getStringExtra("latitude");
+        System.out.println(latitudeStr+" "+longitudeStr);        // Parse the strings into double values
+        longitude = Double.parseDouble(longitudeStr);
+        latitude = Double.parseDouble(latitudeStr);
 
     }
 
@@ -48,9 +55,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        // Create a LatLng object with the retrieved values
+        LatLng location = new LatLng(latitude, longitude);
+System.out.println("creating the map");
+        mMap.addMarker(new MarkerOptions().position(location).title("Find me"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
     }
 }

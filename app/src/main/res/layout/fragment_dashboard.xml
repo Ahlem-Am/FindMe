@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#AFA9A9"
+
     android:orientation="vertical"
     tools:context=".ui.dashboard.DashboardFragment">
 
@@ -16,33 +16,40 @@
         android:layout_marginBottom="30dp"
         android:text="Position Demand"
         android:textAlignment="center"
-        android:textColor="#3F51B5"
+        android:textColor="#873F3F"
         android:textSize="30dp"
         android:textStyle="bold|italic" />
 
-    <EditText
-        android:id="@+id/ed_phone"
-        android:layout_width="match_parent"
-        android:layout_height="79dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:hint="Phone Number"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:textColor="#D72B2929"
-        android:textColorHint="#686464"
-        android:textStyle="italic" />
 
-    <Button
-        android:id="@+id/btn_sms"
-        android:layout_width="349dp"
-        android:layout_height="67dp"
-        android:layout_margin="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="30dp"
-        android:text="Send SMS"
-        android:textColorHighlight="#2196F3" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/ed_phone"
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:ems="10"
+            android:hint="Phone Number"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="#873F3F"
+            android:textColorHint="#873F3F"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/btn_sms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#873F3F"
+            android:text="Send SMS"
+            android:textColorHighlight="#B82772"
+            android:textColorLink="#B82772"
+            app:icon="@color/purple_200"
+            app:strokeColor="@color/purple_200" />
+    </LinearLayout>
 </LinearLayout>
